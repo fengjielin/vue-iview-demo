@@ -1,0 +1,37 @@
+[
+	{
+		"id":1,
+		"teachingClassName":"计算机1班",
+		"teacherName":"张老师",
+		"courseName": "课程1",
+		"classroomPeopleNum":44
+	},
+	{
+		"id":2,
+		"teachingClassName":"计算机2班",
+		"teacherName":"赵老师",
+		"courseName": "课程1",
+		"classroomPeopleNum":45
+	},
+	{
+		"id":3,
+		"teachingClassName":"计算机3班",
+		"teacherName":"李老师",
+		"courseName": "课程1",
+		"classroomPeopleNum":33
+	},
+	{
+		"id":4,
+		"teachingClassName":"计算机4班",
+		"teacherName":"黄老师",
+		"courseName": "课程1",
+		"classroomPeopleNum":55
+	},
+	{
+		"id":5,
+		"teachingClassName":"计算机5班",
+		"teacherName":"高老师",
+		"courseName": "课程1",
+		"classroomPeopleNum":66
+	}
+]

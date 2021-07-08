@@ -19,6 +19,11 @@ const routes = [
     path: '/20210706',
     name: '20210706',
     component: () => import( '../components/tableTest.vue')
+  },
+  {
+    path: '/20210708',
+    name: '20210708',
+    component: () => import( '../views/teachingClass.vue')
   }
 ]
 
