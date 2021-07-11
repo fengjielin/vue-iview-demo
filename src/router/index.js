@@ -13,17 +13,22 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    component: () => import( '../views/About.vue')
+    component: () => import('../views/About.vue')
   },
   {
     path: '/20210706',
     name: '20210706',
-    component: () => import( '../components/tableTest.vue')
+    component: () => import('../components/tableTest.vue')
   },
   {
     path: '/20210708',
     name: '20210708',
-    component: () => import( '../views/teachingClass.vue')
+    component: () => import('../views/teachingClass.vue')
+  },
+  {
+    path: '/courseInfo',
+    name: 'courseInfo',
+    component: () => import('../views/courseInfo.vue')
   }
 ]
 

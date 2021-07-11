@@ -4,7 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> | 
       <router-link to="/20210706">20210706</router-link> | 
-      <router-link to="/20210708">20210708</router-link>
+      <router-link to="/20210708">20210708</router-link> | 
+      <router-link to="/courseInfo">courseInfo</router-link>
     </div>
     <router-view/>
   </div>
@@ -17,6 +18,8 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  height:100%;
+  background-color: #F3F8FF;
 }
 
 #nav {

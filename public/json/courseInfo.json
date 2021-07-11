@@ -1,0 +1,65 @@
+[
+  {
+    "id":1,
+    "courseNum": "K00001",
+    "courseName": "JAVA程序设计",
+    "courseNature": "必修",
+    "evaluationMode": "考试"
+  },
+  {
+    "id":2,
+    "courseNum": "K00002",
+    "courseName": "软件工程",
+    "courseNature": "必修",
+    "evaluationMode": "考试"
+  },
+  {
+    "id":3,
+    "courseNum": "K00003",
+    "courseName": "数据库设计",
+    "courseNature": "选修",
+    "evaluationMode": "考试"
+  },
+  {
+    "id":4,
+    "courseNum": "K00004",
+    "courseName": "计算机编程",
+    "courseNature": "必修",
+    "evaluationMode": "考试"
+  },
+  {
+    "id":5,
+    "courseNum": "K00005",
+    "courseName": "JAVA程序设计",
+    "courseNature": "必修",
+    "evaluationMode": "考试"
+  },
+  {
+    "id":6,
+    "courseNum": "K00006",
+    "courseName": "JAVA程序设计",
+    "courseNature": "必修",
+    "evaluationMode": "考试"
+  },
+  {
+    "id":7,
+    "courseNum": "K00007",
+    "courseName": "软件工程",
+    "courseNature": "必修",
+    "evaluationMode": "考试"
+  },
+  {
+    "id":8,
+    "courseNum": "K00008",
+    "courseName": "软件工程",
+    "courseNature": "必修",
+    "evaluationMode": "考试"
+  },
+  {
+    "id":9,
+    "courseNum": "K00009",
+    "courseName": "数据库设计",
+    "courseNature": "必修",
+    "evaluationMode": "考试"
+  }
+]

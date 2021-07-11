@@ -515,7 +515,6 @@ import axios from 'axios'
 			// 获取教学班的数据
 			getTeachingClass() {
 				let that = this;
-				console.log(teachingClassJson)
 				that.tableData = teachingClassJson;
 
         let data = {
@@ -526,7 +525,6 @@ import axios from 'axios'
               teachingTeacherId: that.searchData.teachingTeacherId,
               courseId: that.searchData.courseId,
         }
-        console.dir(data);
 				// that.loading = true;
 				// that.axios
 				// 	.post(
@@ -664,6 +662,7 @@ import axios from 'axios'
 
 			// 删除按钮的点击事件
 			remove(row) {
+        console.log(this);
 				let that = this;
 				that.$Modal.confirm({
 					closable: true,
