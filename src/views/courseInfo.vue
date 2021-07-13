@@ -110,6 +110,7 @@
 </template>
 
 <script>
+import courseInfoJson from '../json/courseInfo.json'
 export default {
   // 课程信息管理
   data() {
@@ -228,10 +229,12 @@ export default {
   methods: {
     // 请求课程信息
     getCourseInfo() {
-      this.$axios.get("/api/json/courseInfo.json").then((res) => {
-        console.log(res.data);
-        this.courseInfo = res.data;
-      });
+      // this.$axios.get("/api/json/courseInfo.json").then((res) => {
+      //   console.log(res.data);
+      //   this.courseInfo = res.data;
+      // });
+
+      this.courseInfo = courseInfoJson
     },
     // 改变页码
     changePage(i) {

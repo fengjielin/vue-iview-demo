@@ -29,6 +29,31 @@ const routes = [
     path: '/courseInfo',
     name: 'courseInfo',
     component: () => import('../views/courseInfo.vue')
+  },
+  {
+    path: '/courseArrangement',
+    name: 'courseArrangement',
+    component: () => import('../views/courseArrangement.vue')
+  },
+  {
+    path: '/courseApplication',
+    name: 'courseApplication',
+    component: () => import('../views/courseApplication.vue')
+  },
+  {
+    path: '/classroomApplication',
+    name: 'classroomApplication',
+    component: () => import('../views/classroomApplication.vue')
+  },
+  {
+    path: '/classSchedule',
+    name: 'classSchedule',
+    component: () => import('../components/classSchedule.vue')
+  },
+  {
+    path: '/workloadStatistics',
+    name: 'workloadStatistics',
+    component: () => import('../views/workloadStatistics.vue')
   }
 ]
 
