@@ -1,0 +1,44 @@
+[
+  {
+      "id": 1,
+      "buildingNum": "1",
+      "buildingName": "教学楼A座",
+      "isDel": "0",
+      "count": 0
+  },
+  {
+      "id": 2,
+      "buildingNum": "2",
+      "buildingName": "教学楼B座",
+      "isDel": "0",
+      "count": 0
+  },
+  {
+      "id": 3,
+      "buildingNum": "3",
+      "buildingName": "教学楼C座",
+      "isDel": "0",
+      "count": 0
+  },
+  {
+      "id": 4,
+      "buildingNum": "4",
+      "buildingName": "杨奕策楼",
+      "isDel": "0",
+      "count": 0
+  },
+  {
+      "id": 5,
+      "buildingNum": "5",
+      "buildingName": "精技楼",
+      "isDel": "0",
+      "count": 0
+  },
+  {
+      "id": 6,
+      "buildingNum": "6",
+      "buildingName": "尚雅楼",
+      "isDel": "0",
+      "count": 0
+  }
+]

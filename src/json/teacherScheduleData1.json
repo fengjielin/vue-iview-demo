@@ -1,0 +1,50 @@
+[
+  {
+    "id": 8,
+    "teacherId": 1,
+    "teachName": "李四",
+    "semesterID": 1,
+    "weekly": [1,2,3,4,5,6],
+    "week": "星期二",
+    "sectionID": 4,
+    "section": "第四节",
+    "courseID": 1,
+    "course": "Java编程",
+    "classroomID": 1,
+    "classroom": "信息楼221",
+    "classNameID": 1,
+    "className": "20届计算机A班"
+  },
+  {
+    "id": 8,
+    "teacherId": 1,
+    "teachName": "李四",
+    "semesterID": 1,
+    "weekly": [1,2,3,4,5,6],
+    "week": "星期三",
+    "sectionID": 2,
+    "section": "第二节",
+    "courseID": 1,
+    "course": "Java编程",
+    "classroomID": 1,
+    "classroom": "信息楼210",
+    "classNameID": 1,
+    "className": "20届计算机B班"
+  },
+  {
+    "id": 10,
+    "teacherId": 1,
+    "teachName": "李四",
+    "semesterID": 1,
+    "weekly": [1,2,3,4,5,6],
+    "week": "星期五",
+    "sectionID": 1,
+    "section": "第一节",
+    "courseID": 1,
+    "course": "Java编程",
+    "classroomID": 1,
+    "classroom": "信息楼201",
+    "classNameID": 1,
+    "className": "20届计算机D班"
+  }
+]

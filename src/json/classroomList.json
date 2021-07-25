@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "className": "信息楼(201)",
+    "teachingBuildingId": "1",
+    "classProfile": "A202",
+    "floorId": 1,
+    "accomNum": 21,
+    "buildingName": "教学楼A座",
+    "floorName": "一层"
+  },
+  {
+    "id": 2,
+    "className": "信息楼(202)",
+    "teachingBuildingId": "4",
+    "classProfile": "2",
+    "floorId": 13,
+    "accomNum": 0,
+    "buildingName": "杨奕策楼",
+    "floorName": "二层"
+  },
+  {
+    "id": 3,
+    "className": "信息楼(203)",
+    "teachingBuildingId": "3",
+    "classProfile": "222",
+    "floorId": 5,
+    "accomNum": 3,
+    "buildingName": "教学楼C座",
+    "floorName": "五层"
+  },
+  {
+    "id": 4,
+    "className": "信息楼(204)",
+    "teachingBuildingId": "1",
+    "classProfile": "2",
+    "floorId": 1,
+    "accomNum": 0,
+    "buildingName": "教学楼A座",
+    "floorName": "一层"
+  },
+  {
+    "id": 5,
+    "className": "信息楼(205)",
+    "teachingBuildingId": "6",
+    "classProfile": "2",
+    "floorId": 35,
+    "accomNum": 3,
+    "buildingName": "尚雅楼",
+    "floorName": "122"
+  },
+  {
+    "id": 6,
+    "className": "信息楼(206)",
+    "teachingBuildingId": "5",
+    "classProfile": "2222",
+    "floorId": 40,
+    "accomNum": 0,
+    "buildingName": "精技楼",
+    "floorName": "一层1"
+  },
+  {
+    "id": 7,
+    "className": "信息楼(207)",
+    "teachingBuildingId": "1",
+    "classProfile": "A201",
+    "floorId": 3,
+    "accomNum": 111,
+    "buildingName": "教学楼A座",
+    "floorName": "三层"
+  }
+]

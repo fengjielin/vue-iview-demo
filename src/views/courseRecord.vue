@@ -1,5 +1,5 @@
 <template>
-  <div class="workloadStatisticsReview">
+  <div class="courseRecord">
     <div class="content">
       <!-- 搜索与新增区域 -->
       <div style="display: flex; justify-content: flex-end">
@@ -265,14 +265,14 @@ export default {
 </script>
 
 <style>
-.workloadStatisticsReview {
+.courseRecord {
   width: 100%;
   padding: 20px 80px 0;
   height: 100%;
   background-color: #f3f8ff;
 }
 
-.workloadStatisticsReview .content {
+.courseRecord .content {
   margin-top: 24px;
   padding: 24px;
   padding-top: 32px;
@@ -280,12 +280,12 @@ export default {
   background-color: #fff;
 }
 
-.workloadStatisticsReview .content .page {
+.courseRecord .content .page {
   text-align: center;
   margin-top: 39px;
 }
 
-.workloadStatisticsReview .ivu-table-header th {
+.courseRecord .ivu-table-header th {
   background-color: #f0faff;
 }
 </style>

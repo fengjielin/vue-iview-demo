@@ -50,10 +50,32 @@ const routes = [
     name: 'classSchedule',
     component: () => import('../components/classSchedule.vue')
   },
+  ,
+  {
+    path: '/a',
+    name: 'a',
+    component: () => import('../components/a.vue')
+  },
   {
     path: '/workloadStatistics',
     name: 'workloadStatistics',
     component: () => import('../views/workloadStatistics.vue')
+  },
+  {
+    path: '/courseRecord',
+    name: 'courseRecord',
+    component: () => import('../views/courseRecord.vue')
+  },
+  {
+    path: '/classScheduleOverview',
+    name: 'classScheduleOverview',
+    component: () => import('../views/scheduleOverview.vue')
+  },
+  
+  {
+    path: '/mySchedule',
+    name: 'mySchedule',
+    component: () => import('../views/MyWorkbench/mySchedule.vue'),
   }
 ]
 

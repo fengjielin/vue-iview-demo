@@ -1,27 +1,27 @@
 [
 	{
 		"id":1,
-		"bjmc":"计算机1班",
-		"bjrs":44
+		"teachingClassName":"计算机1班",
+		"stuNumber":44
 	},
 	{
 		"id":2,
-		"bjmc":"计算机2班",
-		"bjrs":45
+		"teachingClassName":"计算机2班",
+		"stuNumber":45
 	},
 	{
 		"id":3,
-		"bjmc":"计算机3班",
-		"bjrs":33
+		"teachingClassName":"计算机3班",
+		"stuNumber":33
 	},
 	{
 		"id":4,
-		"bjmc":"计算机4班",
-		"bjrs":55
+		"teachingClassName":"计算机4班",
+		"stuNumber":55
 	},
 	{
 		"id":5,
-		"bjmc":"计算机5班",
-		"bjrs":66
+		"teachingClassName":"计算机5班",
+		"stuNumber":66
 	}
 ]

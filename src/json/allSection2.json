@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "code": "1",
+    "name": "第一节",
+    "begintime": "00:59",
+    "endtime": "09:00"
+  },
+  {
+    "id": 2,
+    "code": "2",
+    "name": "第二节",
+    "begintime": "09:30:00",
+    "endtime": "10:30:00"
+  },
+  {
+    "id": 3,
+    "code": "3",
+    "name": "第三节",
+    "begintime": "11:00",
+    "endtime": "12:00"
+  },
+  {
+    "id": 4,
+    "code": "4",
+    "name": "第四节",
+    "begintime": "05:00",
+    "endtime": "05:30"
+  },
+  {
+    "id": 5,
+    "code": "5",
+    "name": "第五节",
+    "begintime": "03:30:00",
+    "endtime": "04:30:30"
+  },
+  {
+    "id": 6,
+    "code": "6",
+    "name": "第六节",
+    "begintime": "05:00:00",
+    "endtime": "06:00:00"
+  }
+]

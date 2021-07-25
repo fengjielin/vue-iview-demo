@@ -68,22 +68,6 @@
 				activeIndex: 0,
 
 				courseTransferColumns: [
-          // {
-					// 	title: "审核状态",
-					// 	align: "center",
-					// 	minWidth: 152,
-					// 	render: (h, params) => {
-					// 		// 根据条件判断内容重写
-					// 		switch (params.row.status) {
-					// 			case 0:
-					// 				return h("span", "待系部审核");
-					// 			case 1:
-					// 				return h("span", "审核通过");
-					// 			case 2:
-					// 				return h("span", "退回");
-					// 		}
-					// 	},
-					// },
 					{
 						title: "周次",
 						align: "center",

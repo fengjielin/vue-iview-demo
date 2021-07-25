@@ -2,36 +2,36 @@
 	{
 		"id":1,
 		"teachingClassName":"计算机1班",
-		"teacherName":"张老师",
-		"courseName": "课程1",
-		"classroomPeopleNum":44
+		"teacher":"张老师",
+		"course": "...",
+		"stuNumber":44
 	},
 	{
 		"id":2,
 		"teachingClassName":"计算机2班",
-		"teacherName":"赵老师",
-		"courseName": "课程1",
-		"classroomPeopleNum":45
+		"teacher":"赵老师",
+		"course": "...",
+		"stuNumber":45
 	},
 	{
 		"id":3,
 		"teachingClassName":"计算机3班",
-		"teacherName":"李老师",
-		"courseName": "课程1",
-		"classroomPeopleNum":33
+		"teacher":"李老师",
+		"course": "...",
+		"stuNumber":33
 	},
 	{
 		"id":4,
 		"teachingClassName":"计算机4班",
-		"teacherName":"黄老师",
-		"courseName": "课程1",
-		"classroomPeopleNum":55
+		"teacher":"黄老师",
+		"course": "...",
+		"stuNumber":55
 	},
 	{
 		"id":5,
 		"teachingClassName":"计算机5班",
-		"teacherName":"高老师",
-		"courseName": "课程1",
-		"classroomPeopleNum":66
+		"teacher":"高老师",
+		"course": "...",
+		"stuNumber":66
 	}
 ]
