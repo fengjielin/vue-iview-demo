@@ -1,192 +1,168 @@
 <template>
   <div>
-    <Table
-      :columns="columns14"
-      :data="data5"
-      border
-      :span-method="handleSpan"
-    ></Table>
+    <div class="el-card box-card table_container">
+      <div class="el-card__header">
+        <div class="header clearfix">
+          <span>{{ title }}</span>
+          <el-button
+            size="small"
+            type="primary"
+            @click="onEdit"
+            class="btn_right"
+            v-if="!isShow"
+            >编辑
+          </el-button>
+          <el-button
+            size="small"
+            type="primary"
+            @click="onComplete"
+            class="btn_right"
+            v-if="isFinish"
+            >完成
+          </el-button>
+        </div>
+      </div>
+      <div class="el-card__body">
+        <table class="gridtable" border>
+          <thead>
+            <tr>
+              <th>序号</th>
+              <th>项目</th>
+              <th>分类</th>
+              <th>分项</th>
+              <th class="w">现场管理</th>
+              <th class="w">重大隐患</th>
+              <th class="w">汇总</th>
+              <th class="w">备注</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="item in tableData" :key="item.id">
+              <td :rowspan="item.idspan" :class="{ hidden: item.iddis }">
+                {{ item.id }}
+              </td>
+              <td
+                :rowspan="item.projectspan"
+                :class="{ hidden: item.projectdis }"
+              >
+                {{ item.project }}
+              </td>
+              <td :rowspan="item.typespan" :class="{ hidden: item.typedis }">
+                {{ item.type }}
+              </td>
+              <td>{{ item.subentry }}</td>
+              <td class="w">
+                <el-input v-model="item.nowManage" v-if="isShow"></el-input>
+                <span v-else>{{ item.nowManage }}</span>
+              </td>
+              <td class="w">
+                <el-input v-model="item.Hidden" v-if="isShow"></el-input>
+                <span v-else>{{ item.Hidden }}</span>
+              </td>
+              <td class="w">
+                <el-input v-model="item.Total" v-if="isShow"></el-input>
+                <span v-else>{{ item.Total }}</span>
+              </td>
+              <td class="w">
+                <el-input v-model="item.remark" v-if="isShow"></el-input>
+                <span v-else>{{ item.remark }}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </template>
- 
 <script>
 export default {
   data() {
     return {
-      columns14: [
+      title: "风险评估",
+      isShow: false,
+      isFinish: false,
+      tableData: [
         {
-          title: "Date",
-          key: "date",
+          id: 1,
+          project: "企业性质分类",
+          type: "针对企业类别",
+          subentry: "生产（危险化学品生产企业）Ⅰ类A、B、C、级",
+          nowManage: "3.2",
+          Hidden: "是",
+          Total: "",
+          remark: "备注备注",
         },
         {
-          title: "Name",
-          key: "name",
+          id: 2,
+          project: "企业性质分类",
+          type: "针对企业类别",
+          subentry: "使用（兰炭及配套企业）Ⅱ类A、B、C、级",
+          nowManage: "3.2",
+          Hidden: "是",
+          Total: "",
+          remark: "",
         },
         {
-          title: "Age",
-          key: "age",
+          id: 3,
+          project: "企业性质分类",
+          type: "针对企业类别",
+          subentry: "储存、经营（加油站）Ⅲ类A、B、C、级C、级",
+          nowManage: "3.2",
+          Hidden: "是",
+          Total: "",
+          remark: "",
         },
         {
-          title: "Address",
-          key: "address",
+          id: 4,
+          project: "三同时执行情况",
+          type: "针对改扩",
+          subentry: "改扩建未执行",
+          nowManage: "3.2",
+          Hidden: "是",
+          Total: "",
+          remark: "",
         },
       ],
-      data5: [],
-      ignoreMergeRow: [],
     };
   },
-  methods: {
-    handleMergeRow(data) {
-      let ret = JSON.parse(JSON.stringify(data));
-      let collection = {};
-      let preIndex = -1;
-      for (let i in ret) {
-        // item = {
-        //     "name": "Jim",
-        //     "age": 18,
-        //     "address": "Sydney",
-        //     "date": "2016-10-03"
-        // }
-        let item = ret[i];
-        item.source = {};
-        for (let key in item) {
-          if (key == "source") {
-            continue;
-          }
-          // 记录每个key
-          // collection = {
-          //     "name": {}
-          // }
-          if (!collection[key]) {
-            collection[key] = {};
-          }
-          // 首项或者该项此列不等于上一项此列
-          if (preIndex == -1 || ret[preIndex][key] != item[key]) {
-            // 记录每个key对应的所有值以及其起始索引和出现次数
-            // collection = {
-            //     "name": {
-            //         "Jim#0": {
-            //             "firstIndex": 0,
-            //             "count": 1
-            //         }
-            //     }
-            // }
-            collection[key][`${item[key]}#${i}`] = {
-              firstIndex: i,
-              count: 1,
-            };
-            // 标注该列的起源index
-            item.source[key] = i;
-          } else {
-            // 通过上一项找到起源index
-            let source = ret[preIndex].source[key];
-            item.source[key] = source;
-            // 合并该列的行数加1
-            collection[key][`${item[key]}#${source}`].count += 1;
-          }
-        }
-        preIndex = i;
-      }
-      console.log(collection);
-      for (let key in collection) {
-        // items = {
-        //     "Jim#0": {
-        //         "firstIndex": "0",
-        //         "count": 3
-        //     },
-        //     "Jon#3": {
-        //         "firstIndex": "3",
-        //         "count": 1
-        //     }
-        // }
-        let items = collection[key];
-        for (let itemkey in items) {
-          // value = {
-          //     "firstIndex": "0",
-          //     "count": 3
-          // }
-          let value = items[itemkey];
-          // 根据记录的起始索引设置该项的mergeRow
-          // {
-          //     "name": "Jim",
-          //     "age": 18,
-          //     "address": "Sydney",
-          //     "date": "2016-10-03",
-          //     "mergeRow": {
-          //         "address": 1,
-          //         "age": 1,
-          //         "date": 1,
-          //         "name": 3
-          //     }
-          // }
-          if (!ret[value.firstIndex].mergeRow) {
-            ret[value.firstIndex].mergeRow = {};
-          }
-          ret[value.firstIndex].mergeRow[key] = value.count;
-        }
-      }
-      console.log(ret);
-      return ret;
-    },
-    handleSpan({ row, column, rowIndex, columnIndex }) {
-      if (row.mergeRow) {
-        // 忽略合并该行此列
-        if (
-          this.ignoreMergeRow &&
-          this.ignoreMergeRow.indexOf(column.key) >= 0
-        ) {
-          return {
-            rowspan: 1,
-            colspan: 1,
-          };
-        }
-        // 存在此列的key，则该行此列应显示，向下合并此列的几行（包括自己）则取决于其值
-        if (row.mergeRow[column.key]) {
-          return {
-            rowspan: row.mergeRow[column.key],
-            colspan: 1,
-          };
-        } else {
-          // 说明该行此列应被在此之上的行合并，rowspan和colspan设置为0，不予显示
-          return {
-            rowspan: 0,
-            colspan: 0,
-          };
-        }
-      }
-    },
+  created() {
+    this.getData(this.tableData);
   },
-  mounted() {
-    let data = [
-      {
-        name: "Jim",
-        age: 18,
-        address: "Sydney",
-        date: "2016-10-03",
-      },
-      {
-        name: "Jim",
-        age: 24,
-        address: "London",
-        date: "2016-10-01",
-      },
-      {
-        name: "Jim",
-        age: 30,
-        address: "Sydney",
-        date: "2016-10-01",
-      },
-      {
-        name: "Jon",
-        age: 26,
-        address: "Sydney",
-        date: "2016-10-04",
-      },
-    ];
-    this.data5 = this.handleMergeRow(data);
+  methods: {
+    onEdit() {
+      this.isShow = true;
+      this.isFinish = true;
+    },
+    onComplete() {
+      this.isShow = false;
+      this.isFinish = false;
+    },
+    getData(list) {
+      //console.log(list[0]);
+      for (let field in list[0]) {
+        var k = 0;
+        while (k < list.length) {
+          list[k][field + "span"] = 1;
+          list[k][field + "dis"] = false;
+          for (var i = k + 1; i <= list.length - 1; i++) {
+            if (list[k][field] == list[i][field] && list[k][field] != "") {
+              list[k][field + "span"]++;
+              list[k][field + "dis"] = false;
+              list[i][field + "span"] = 1;
+              list[i][field + "dis"] = true;
+            } else {
+              break;
+            }
+          }
+          k = i;
+        }
+      }
+      return list;
+    },
   },
 };
 </script>
- 
-<style>
+
+<style scoped>
+
 </style>

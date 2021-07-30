@@ -393,8 +393,8 @@ import allSection2 from "../json/allSection2.json";
 import buildings2 from "../json/buildings.json";
 import classroomList2 from "../json/classroomList.json";
 
-import FileSaver from "file-saver";
-import XLSX from "xlsx";
+// import FileSaver from "file-saver";
+// import XLSX from "xlsx";
 
 export default {
   data() {
@@ -432,6 +432,7 @@ export default {
         teacherId: "",
       },
 
+      sortClassroomWeek: [],
       // 教室课表
       classroomScheduleColumns: [],
 
@@ -710,29 +711,30 @@ export default {
   },
   methods: {
     exportData() {
-      let et = XLSX.utils.table_to_book(document.getElementById("table_box"));
-      let etout = XLSX.write(et, {
-        bookType: "xlsx",
-        bookSST: true,
-        type: "array",
-      });
-      try {
-        FileSaver.saveAs(
-          new Blob([etout], {
-            type: "application/octet-stream",
-          }),
-          "trade-publish.xlsx"
-        ); //trade-publish.xlsx 为导出的文件名
-      } catch (e) {
-        console.log(e, etout);
-      }
-      return etout;
+      // let et = XLSX.utils.table_to_book(document.getElementById("table_box"));
+      // let etout = XLSX.write(et, {
+      //   bookType: "xlsx",
+      //   bookSST: true,
+      //   type: "array",
+      // });
+      // try {
+      //   FileSaver.saveAs(
+      //     new Blob([etout], {
+      //       type: "application/octet-stream",
+      //     }),
+      //     "trade-publish.xlsx"
+      //   ); //trade-publish.xlsx 为导出的文件名
+      // } catch (e) {
+      //   console.log(e, etout);
+      // }
+      // return etout;
     },
     // 教室课表的多选框 与 课表的对应
     setWeekClassroomSchedule() {
       console.log(this.search.classroomWeek);
       let classroomWeek = this.deepClone(this.search.classroomWeek);
       classroomWeek.sort((a, b) => a - b);
+      this.sortClassroomWeek = classroomWeek;
       let week = null;
       this.classroomScheduleColumns = [];
       classroomWeek.forEach((item, i) => {
@@ -836,8 +838,8 @@ export default {
         };
         this.allSection.forEach((e) => {
           let code = {
-            title: e.code,
-            key: "",
+            title: e.name,
+            key: e.code,
             align: "center",
             minWidth: 90,
             render: (h, params) => {
@@ -862,8 +864,8 @@ export default {
         };
         this.allSection.forEach((e) => {
           let code = {
-            title: e.code,
-            key: "",
+            title: e.name,
+            key: e.code,
             align: "center",
             minWidth: 90,
             render: (h, params) => {
@@ -1408,28 +1410,104 @@ export default {
     // 行、列合并
     handleSpan({ row, column, rowIndex, columnIndex }) {
       if (this.activeIndex == 0) {
-        if (rowIndex == row._index && columnIndex == column._index) {
-          if (row.week0) {
-            if (row.week0[column.title]) {
-              if (Object.keys(row.week0[column.title]).length != 0) {
-                let x = row.week0[column.title].mergeNum == 0 ? 0 : 1;
+        if (row["week1"]) {
+          let index = this.sortClassroomWeek.findIndex((item) => item == 1);
+            let colIndex = index * this.allSection.length + column.key * 1;
+            if (!Object.is(colIndex, NaN)) {
+              if (columnIndex == colIndex) {
+                let x = row["week1"][column.key].mergeNum == 0 ? 0 : 1;
                 let y =
-                  row.week0[column.title].mergeNum == 0
+                  row["week1"][column.key].mergeNum == 0
                     ? 0
-                    : row.week0[column.title].mergeNum;
-                return {
-                  rowspan: x,
-                  colspan: y,
-                };
+                    : row["week1"][column.key].mergeNum;
+                return [x, y];
               }
             }
-          } else {
-            return {
-              rowspan: 1,
-              colspan: 1,
-            };
-          }
         }
+        if (row["week2"]) {
+          let index = this.sortClassroomWeek.findIndex((item) => item == 2);
+            let colIndex = index * this.allSection.length + column.key * 1;
+            if (!Object.is(colIndex, NaN)) {
+              if (columnIndex == colIndex) {
+                let x = row["week2"][column.key].mergeNum == 0 ? 0 : 1;
+                let y =
+                  row["week2"][column.key].mergeNum == 0
+                    ? 0
+                    : row["week2"][column.key].mergeNum;
+                return [x, y];
+              }
+            }
+        }
+        if (row["week3"]) {
+          let index = this.sortClassroomWeek.findIndex((item) => item == 3);
+            let colIndex = index * this.allSection.length + column.key * 1;
+            if (!Object.is(colIndex, NaN)) {
+              if (columnIndex == colIndex) {
+                let x = row["week3"][column.key].mergeNum == 0 ? 0 : 1;
+                let y =
+                  row["week3"][column.key].mergeNum == 0
+                    ? 0
+                    : row["week3"][column.key].mergeNum;
+                return [x, y];
+              }
+            }
+        }
+        if (row["week4"]) {
+          let index = this.sortClassroomWeek.findIndex((item) => item == 4);
+            let colIndex = index * this.allSection.length + column.key * 1;
+            if (!Object.is(colIndex, NaN)) {
+              if (columnIndex == colIndex) {
+                let x = row["week4"][column.key].mergeNum == 0 ? 0 : 1;
+                let y =
+                  row["week4"][column.key].mergeNum == 0
+                    ? 0
+                    : row["week4"][column.key].mergeNum;
+                return [x, y];
+              }
+            }
+        }
+        if (row["week5"]) {
+          let index = this.sortClassroomWeek.findIndex((item) => item == 5);
+            let colIndex = index * this.allSection.length + column.key * 1;
+            if (!Object.is(colIndex, NaN)) {
+              if (columnIndex == colIndex) {
+                let x = row["week5"][column.key].mergeNum == 0 ? 0 : 1;
+                let y =
+                  row["week5"][column.key].mergeNum == 0
+                    ? 0
+                    : row["week5"][column.key].mergeNum;
+                return [x, y];
+              }
+            }
+        }
+        if (row["week6"]) {
+          let index = this.sortClassroomWeek.findIndex((item) => item == 6);
+            let colIndex = index * this.allSection.length + column.key * 1;
+            if (!Object.is(colIndex, NaN)) {
+              if (columnIndex == colIndex) {
+                let x = row["week6"][column.key].mergeNum == 0 ? 0 : 1;
+                let y =
+                  row["week6"][column.key].mergeNum == 0
+                    ? 0
+                    : row["week6"][column.key].mergeNum;
+                return [x, y];
+              }
+            }
+        }
+        if (row["week0"]) {
+          let index = this.sortClassroomWeek.findIndex((item) => item == 0);
+            let colIndex = index * this.allSection.length + column.key * 1;
+            if (!Object.is(colIndex, NaN)) {
+              if (columnIndex == colIndex) {
+                let x = row["week0"][column.key].mergeNum == 0 ? 0 : 1;
+                let y =
+                  row["week0"][column.key].mergeNum == 0
+                    ? 0
+                    : row["week0"][column.key].mergeNum;
+                return [x, y];
+              }
+            }
+        }   
       } else {
         if (columnIndex == 1) {
           //计算合并的行数列数
@@ -1480,47 +1558,45 @@ export default {
     assembleData(data) {
       if (this.activeIndex === 0) {
         data.forEach((classroom, i) => {
-          console.log({ classroom, i });
-          classroom.mergeObj = {}
+          // 遍历每一行
+          console.log({
+            classroom,
+            i,
+          });
           this.search.classroomWeek.forEach((weekNum) => {
-            classroom.mergeObj[`week${weekNum}Merge`] = 1
-            let cWeek = classroom[`week${weekNum}`];
+            // 遍历所勾选的星期
+            let cWeek = classroom[`week${weekNum}`]; // 当前星期存在的课程
+            let str = null;
+            let index = null;
             if (cWeek) {
-              let cWeekArr = Object.keys(cWeek);
-              
-              console.log(cWeekArr);
-              // cWeekArr.forEach((section,i) => {
-              //   if(cWeek[section].id && cWeek[section].already != 1){
-              //     if(cWeekArr[i+1] && cWeek[cWeekArr[i+1]]){
-              //       cWeek[section].mergeNum = 1;
-              //       for (let a = i + 1; a < cWeekArr.length; a++) {
-              //         console.log(a)
-              //         if(cWeek[section].sectionStr == cWeek[cWeekArr[a]].sectionStr){
-              //           cWeek[section].mergeNum ++
-              //           cWeek[cWeekArr[a]].already = 1;
-              //           console.log(cWeek[section].sectionStr)
-              //           console.log(cWeek[cWeekArr[a]].sectionStr)
-              //         }else{
-              //           break
-              //         }
-
-              //       }
-              //     }
-              //   }
-              // });
-
-              for (let section in cWeek) {
-                if (cWeek[section].id && cWeek[section].already != 1) {
-                  if (cWeek[section * 1 + 1]) {
-                    cWeek[section].mergeNum = 1;
-                    if (
-                      cWeek[section].sectionStr ==
-                        cWeek[section * 1 + 1].sectionStr
-                    ) {
-                      cWeek[section].mergeNum++;
-                      cWeek[section * 1 + 1].mergeNum = 0;
-                      cWeek[section * 1 + 1].already = 1;
+              for (let section of Object.keys(cWeek)) { //遍历当前星期的节次
+                cWeek[section].mergeNum = 1;
+                // 判断是否为第一个有课的节次
+                if (
+                  cWeek[section].id &&
+                  (cWeek[section * 1 - 1] == undefined ||
+                    !cWeek[section * 1 - 1].id)
+                ) {
+                  // 判断当前节次的下一节次是否存在课程
+                  if (
+                    cWeek[section * 1 + 1] != undefined &&
+                    cWeek[section * 1 + 1].id
+                  ) {
+                    console.log(section);
+                    if (!str && !index) {
+                      str = cWeek[section].sectionStr;
+                      index = section;
+                      continue;
                     }
+                  }
+                } else if (cWeek[section].id) {
+                  if (cWeek[section].sectionStr == str) {
+                    cWeek[index].outset = index;
+                    cWeek[index].mergeNum++;
+                    cWeek[section].mergeNum = 0;
+                  } else {
+                    str = cWeek[section].sectionStr;;
+                    index = section;
                   }
                 }
               }
